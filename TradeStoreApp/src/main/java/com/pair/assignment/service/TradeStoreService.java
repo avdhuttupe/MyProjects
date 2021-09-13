@@ -61,8 +61,8 @@ public class TradeStoreService {
 	}
 
 	// To Run Scheduler Daily to refresh Expiry Flag
-	// @Scheduled(cron = "1/5 * * * * *") //Run Every 5 seconds
-	@Scheduled(cron = "* * 1 * * *")
+	//@Scheduled(cron = "1/5 * * * * *") //Run Every 5 seconds
+	@Scheduled(cron = "* * 1 * * *")     // Run Every Hour
 	public int refreshExpiry() {
 		logger.info("Application_Log - refreshExpiry called ....."+new Date());
 		return resource.updateStoreSetExpiryFlag();
